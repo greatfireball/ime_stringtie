@@ -29,7 +29,7 @@ RUN apt update && apt install --yes --no-install-recommends \
     make release && \
     rm -rf /var/lib/apt/lists/*
 
-ENV PATH=/opt/stingtie/:$PATH
+ENV PATH=/opt/stringtie/:$PATH
 
 VOLUME /data
 
