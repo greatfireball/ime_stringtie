@@ -19,6 +19,7 @@ WORKDIR /opt
 RUN apt update && apt install --yes --no-install-recommends \
         build-essential \
 	ca-certificates \
+	python \
 	wget \
 	zlib1g-dev && \
     wget -O stringtie.tar.gz https://github.com/gpertea/stringtie/archive/v1.3.4d.tar.gz && \
