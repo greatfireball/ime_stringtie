@@ -14,6 +14,21 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/greatfireball/ime_stringtie.git"
 
+WORKDIR /opt
+
+RUN apt update && apt install --yes --no-install-recommends \
+        build-essential \
+        wget && \
+    wget -O stringtie.tar.gz https://github.com/gpertea/stringtie/archive/v1.3.4d.tar.gz && \
+    tar xzf stringtie.tar.gz && \
+    rm stringtie.tar.gz && \
+    ln -s stringtie* stringtie && \
+    cd  stringtie && \
+    make release && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV PATH=/opt/stingtie/:$PATH
+
 VOLUME /data
 
 WORKDIR /data
