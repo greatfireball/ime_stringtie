@@ -18,7 +18,10 @@ WORKDIR /opt
 
 RUN apt update && apt install --yes --no-install-recommends \
         build-essential \
-        wget && \
+	ca-certificates \
+	python \
+	wget \
+	zlib1g-dev && \
     wget -O stringtie.tar.gz https://github.com/gpertea/stringtie/archive/v1.3.4d.tar.gz && \
     tar xzf stringtie.tar.gz && \
     rm stringtie.tar.gz && \
@@ -27,7 +30,7 @@ RUN apt update && apt install --yes --no-install-recommends \
     make release && \
     rm -rf /var/lib/apt/lists/*
 
-ENV PATH=/opt/stingtie/:$PATH
+ENV PATH=/opt/stringtie/:$PATH
 
 VOLUME /data
 
