@@ -22,7 +22,7 @@ RUN apt update && apt install --yes --no-install-recommends \
 	python \
 	wget \
 	zlib1g-dev && \
-    wget -O stringtie.tar.gz https://github.com/gpertea/stringtie/archive/v1.3.4d.tar.gz && \
+    wget -O stringtie.tar.gz https://github.com/gpertea/stringtie/archive/v1.3.5.tar.gz && \
     tar xzf stringtie.tar.gz && \
     rm stringtie.tar.gz && \
     ln -s stringtie* stringtie && \
